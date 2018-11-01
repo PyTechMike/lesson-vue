@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="style.css" rel="stylesheet">
+	<title>Training Vue</title>
+</head>
+<body>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<div class="app new-block">
+		<button v-on:click="show = !show" class="show-button"> {{buttonText}}</button>
+		<p v-if="show">{{hello}}</p>
+
+	</div>
+	
+	<div class="app-2 new-block">
+		<div v-for="word in words" class="inline-block-elem">{{word}}</div>
+	</div>
+
+	<div class="app-3 new-block">
+		<button v-on:click="reverseText">{{buttonText}}</button>
+		<div>{{word}}</div>
+	</div>
+
+	<div class="app-4 new-block">
+		<div>{{text}}</div>
+		<input v-model="text">
+	</div>
+
+	<div class="new-block">
+		<final-yellow-text></final-yellow-text>
+	</div>
+
+	<script src="./index.js"></script>
+</body>
+</html>

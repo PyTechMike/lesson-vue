@@ -1,0 +1,22 @@
+body {
+	font-size: 30px;
+}
+
+.app-2 {
+	text-align: center;
+}
+
+.new-block {
+	padding-top: 30px;
+}
+
+.inline-block-elem {
+	position: relative;
+	display: inline-block;
+    text-align: center;
+	padding: 20px 5px;
+}
+
+.yellow-block {
+	background-color: yellow;
+}

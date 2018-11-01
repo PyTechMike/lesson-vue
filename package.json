@@ -1,0 +1,18 @@
+{
+  "name": "lesson-vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server \"src\" --files \"src\" --open \"external\" --tunnel --no-notify --no-ghost-mode"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.13"
+  }
+}
