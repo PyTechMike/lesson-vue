@@ -1,5 +1,5 @@
 body {
-	font-size: 30px;
+	font-size: 25x;
 }
 
 .app-2 {
@@ -19,4 +19,13 @@ body {
 
 .yellow-block {
 	background-color: yellow;
+}
+
+.post-block {
+	position: relative;
+	border: 1px solid black;
+	margin-bottom: 10px;
+	width: 45%;
+	display: inline-block;
+	margin-left: 3%;
 }

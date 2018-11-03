@@ -8,7 +8,7 @@
 	<title>Training Vue</title>
 </head>
 <body>
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./vue.js"></script>
 
 	<div class="app new-block">
 		<button v-on:click="show = !show" class="show-button"> {{buttonText}}</button>
@@ -30,10 +30,18 @@
 		<input v-model="text">
 	</div>
 
-	<div class="new-block">
-		<final-yellow-text></final-yellow-text>
+	
+	<div class="app-5 new-block">
+		<final-yellow-text v-bind:more="more"></final-yellow-text>
+	</div>
+	
+	<div class="app-6 new-block">
+		<post-block v-for="post in posts" v-bind:data="post" v-bind:id="++id"></post-block>
+		<app-id v-bind:id="id"></app-id>
+		<async-example></async-example>
 	</div>
 
-	<script src="./index.js"></script>
+	<!-- <script src="./index.js"></script> -->
+	<script src="dist/main.js" type="text/javascript"></script>
 </body>
 </html>
