@@ -5,12 +5,13 @@
 		placeholder="enter city name"
 		@keydown.enter="getWeatherData"
 		></InputCityName>
-		<div v-if="loading">Waiting for city name</div>
-		<div v-if="errored">There is no city with name: {{cityName}}</div>
+		<div class="weather-info-cases">
+			<div v-if="loading" class="loading">Waiting for city name</div>
+			<div v-if="errored" class="errored">There is no city with name: {{cityName}}</div>
+		</div>
 		<div v-if="!loading, !errored" class="weather-info-main">
 			<div class="weather-info-name">In the city {{cityName}}:</div>
 			<div class="weather-info-part" v-for="(info, id) in weatherInfo" v-bind:key="id">{{info}}</div>
-			<!-- {{weatherData}} -->
 		</div>
 	</div>
 </template>
@@ -44,11 +45,12 @@ export default {
 		setWeatherInfo (WeatherData) {
 			let calculedTemp = (Number(WeatherData.data.main.temp) - 273.15).toFixed(1);
 			let calculedPressure = (Number(WeatherData.data.main.pressure) / 1.333).toFixed(1);
+			let calculedVisibility = (Number(WeatherData.data.visibility) / 1000).toFixed(1);
 
 			this.weatherInfo.temperature = 'Temperature: ' + calculedTemp + ' °C'; 
 			this.weatherInfo.pressure = 'Pressure: ' + calculedPressure + ' mmHg'; 
 			this.weatherInfo.humidity = 'Humidity: ' + Number(WeatherData.data.main.humidity) + ' %'; 
-			this.weatherInfo.visibility = 'Visibility: ' + Number(WeatherData.data.visibility) / 1000 + ' km';
+			this.weatherInfo.visibility = 'Visibility: ' +  calculedVisibility + ' km';
 			this.weatherInfo.wind = 'Wind: ' + Number(WeatherData.data.wind.speed) + ' km/h'; 
 			this.weatherInfo.clouds = 'Clouds: ' + Number(WeatherData.data.clouds.all) + ' %'; 
 		},

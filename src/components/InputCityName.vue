@@ -1,7 +1,7 @@
 <template>
 	<input
 		type="text"
-		class="input"
+		class="input-city"
 		:value="value"
 		v-on="listeners"
 	>
